@@ -1,0 +1,12 @@
+<import src="../../../wxParse/wxParse.wxml"/>
+<view>
+  <text class="title">{{ latestDetail.article_title  }}</text>
+  <view class="title-presentation">
+    <text class="count">{{ latestDetail.count }}点击</text>
+    <text class="author">作者：{{ latestDetail.author }}</text>
+  </view>
+  <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+
+  <view class="footer">文章结束</view>
+</view>
+

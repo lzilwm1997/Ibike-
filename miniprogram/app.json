@@ -1,0 +1,50 @@
+{
+  "pages": [
+    "pages/NewsInformation/news",
+    "pages/Dynamic/dynamic",
+    "pages/Forum/forum",
+    "pages/Personal/personal"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "爱骑行",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "color": "#2c2c2c",
+    "selectedColor": "#bfbfbf",
+    "backgroundColor": "#F8F8F8",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/NewsInformation/news",
+        "text": "新闻资讯",
+        "iconPath": "images/news.png",
+        "selectedIconPath": "images/news-action.png"
+      },
+      {
+        "pagePath": "pages/Dynamic/dynamic",
+        "text": "骑游动态",
+        "iconPath": "images/dynamic.png",
+        "selectedIconPath": "images/dynamic-action.png"
+      },
+      {
+        "pagePath": "pages/Forum/forum",
+        "text": "论坛社区",
+        "iconPath": "images/forum.png",
+        "selectedIconPath": "images/forum-action.png"
+      },
+      {
+        "pagePath": "pages/Personal/personal",
+        "text": "个人中心",
+        "iconPath": "images/personal.png",
+        "selectedIconPath": "images/personal-action.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}

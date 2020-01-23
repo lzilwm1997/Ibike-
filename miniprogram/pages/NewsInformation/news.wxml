@@ -1,0 +1,56 @@
+<!-- 轮播图 -->
+<view class="swiper-container">
+  <swiper class="swiper" autoplay="true" circular="true" 
+    interval="3000" easing-function="easeOutCubic" 
+    current="{{swiperCurren}}" 
+    bindchange="swiperChange">
+    <!-- 轮播图图片 -->
+    <swiper-item class="swiperItem" wx:for="{{ swiperList }}" wx:key="index">
+      <!-- 加上widthFix可以使图片自适应 -->
+      <image src="{{item.image}}"  lazy-load="true" mode="aspectFill" catchtap="swiperdetailHandle" data-id="{{ swiperList[index]._id }}"></image>
+    </swiper-item>
+  </swiper>
+  <!-- 为了和喜马拉雅一致，自己需定制轮播图dots -->
+  <view class="dots">
+    <block wx:for="{{imgList.length}}" wx:key="index">
+      <!-- 根据index判断是否选中 -->
+      <view class="dotsItem{{index == swiperCurrent ? ' active' : ''}}"></view>
+    </block>
+  </view>
+</view>
+
+<!-- 宫格导航 -->
+<view class="nav">
+  <block>  
+    <view class="navItem" bindtap="{{item.events}}" wx:for="{{navList}}"  wx:key="index" data-index="{{ index }}" >
+      <image class="navIcon" src="{{item.icon}}" mode="widthFix" lazy-load="true"></image>
+      <text class="navText">{{item.text}}</text>
+    </view>
+  </block>
+</view>
+
+<!-- 最新资讯 -->
+<view class="content">
+  <view class="contentList">
+    <view class="barTitle">
+      <text class="NewsTitle">最新资讯</text>
+    </view>
+      <!-- 列表内容 -->
+      <view class="content" id="{{ item._id }}" wx:for="{{ latestNews }}" wx:key="index" bindtap="latestNewsHandle" data-id="{{ item._id }}">
+          <view class="contentImg">
+            <image src="{{ item.image }}" mode="aspectFill" lazy-load="true"></image>
+          </view>
+        <view class="content-right">
+        <view class="title">
+            <view class="titleText">{{ item.article_title }}</view>  
+          </view>
+          <view class="count">
+              <!-- <text class="icon-"></text> -->
+              <text class="playcount">{{ item.category }}</text>
+              <text class="jicount">{{ item.count }}点击</text>
+              <text class="Newsdate">{{ item.publishDate }}</text>
+          </view>
+        </view>
+      </view>
+  </view>
+</view>

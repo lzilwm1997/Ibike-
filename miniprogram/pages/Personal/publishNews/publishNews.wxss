@@ -1,0 +1,109 @@
+@import "./assets/iconfont.wxss";
+@import "../../../wxParse/wxParse.wxss";
+.intro {
+  margin: 30px;
+  text-align: center;
+  align-items: center;
+  font-weight: 900;
+  font-size: 20px;
+}
+.title{
+  display: flex;
+  height: 100rpx;
+  align-items: center;
+  margin-top: 10rpx;
+  font-weight: 900;
+  justify-content: center;
+}
+.text{
+  width: 100%;
+  /* margin-top: 10rpx; */
+}
+.text text{
+  display: flex;
+  height: 100rpx;
+  background-color: #ECECEC;
+  font-size: 18px;
+  padding-left: 15rpx;
+  align-items: center;
+}
+radio{
+  display: block;
+  transform:scale(0.9)
+}
+.text .radio text{
+  font-size: 16px;
+  background-color: #fff;
+  display: flex;
+  align-items: 
+
+}
+.text input{
+  display: flex;
+  height: 100rpx;
+  align-items: center;
+  font-size: 16px;
+  padding-left: 15rpx;
+  border-bottom:1px solid #ccc; 
+  border-top:1px solid #ccc; 
+}
+.toolbar {
+  box-sizing: border-box;
+  padding: 0 15px;
+  height: 150px;
+  width: 100%;
+  position: relative;
+  left: 0;
+  right: 100%;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-wrap: wrap;
+  border: 1px solid #ECECEC;
+  border-left: none;
+  border-right: none;
+}
+.toolbar i{
+  display: flex;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  font-size: 20px;
+  align-items: center;
+  justify-content: center;
+}
+.button{
+  box-sizing: border-box;
+  padding: 0 15px;
+  width: 100%;
+  position: relative;
+  left: 0;
+  right: 100%;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+button:not([size='mini']) {
+min-height: 40px;
+margin-left: auto;
+margin-right: auto;
+width: 100%;
+background-color: #1aad19;
+}
+.coverbut button:not([size='mini']){
+  color: #fff;
+}
+.cover{
+  position: relative
+}
+.cover image{
+  width: 100%;
+}
+.ico{
+  position: absolute;
+  top: 40;
+  right: 0;
+}
+

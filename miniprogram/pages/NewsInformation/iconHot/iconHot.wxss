@@ -1,0 +1,69 @@
+/* icon列表头部 */
+.iconHeader{
+  width: 100%;
+  padding: 15rpx 0;
+  border-bottom: 2rpx solid #f6f6f6;
+  text-align: center;
+}
+.icon-title{
+  font-size: 38rpx;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: 800;
+}
+
+/* icon列表内容 */
+icon-content{
+  width: 100%;
+  margin: 0 auto;
+}
+.icon-list{
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  border-bottom: 1px solid #f6f6f6;
+  padding: 20rpx 0;
+}
+.icon-right image{
+  width: 228rpx;
+  height: 160rpx;
+  border-radius: 15rpx;
+  margin-left: 10rpx;
+}
+.title{
+  width: 100%;
+  height: 108rpx;
+  overflow: hidden;
+}
+.titleText{
+  font-size: 35rpx;
+  color: #333;
+  text-align: left;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;/*行数n*/
+  -webkit-box-orient: vertical; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 10rpx;
+}
+.count{
+  width: 100%;
+  height: 50rpx;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin-top: 20rpx;
+}
+.playcount{
+ font-size: 25rpx;
+ color: #cdcdcd;
+ margin-right: 30rpx;
+}
+.jicount{
+  font-size: 25rpx;
+  color: #cdcdcd;
+  margin-right: 30rpx;
+}
+.Newsdate{
+  font-size: 25rpx;
+  color: #cdcdcd;
+}

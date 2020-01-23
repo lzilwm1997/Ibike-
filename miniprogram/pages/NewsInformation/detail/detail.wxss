@@ -1,0 +1,39 @@
+@import "../../..//wxParse/wxParse.wxss";
+.ql-indent-1{
+  text-indent: 2em
+}
+.wxParse-p{
+  display: inline-block;
+  text-indent: 2em;
+  font-size:14px;
+}
+view{
+  width: 95%;
+  margin: 0 auto;
+  color: #333;
+  margin-top: 10rpx;
+  line-height: 24px;
+}
+.wxParse-p image {
+  margin: 10px 0;
+  margin-left: -2em
+}
+.title{
+  font-weight: 900;
+}
+.title-presentation{
+  font-size: 9px;
+  color: #ccc;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer{
+  margin: 10px 0;
+  border-top: 1px solid #ccc;
+  color: #ccc;
+  text-align: center;
+}
+
+

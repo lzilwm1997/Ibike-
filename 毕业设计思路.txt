@@ -1,0 +1,76 @@
+新闻资讯:整车资讯，赛事活动，骑行游记，热点快报
+骑游动态:热门动态，我的关注
+论坛社区:二手交易，约伴骑行，装备修理，中老年车友，山地车，公路车，旅行车，聊天灌水，骑行安全
+个人中心:个人资料，我的帖子，我的投稿，我的动态，反馈，收藏，登录注册
+
+
+
+数据库密码：
+admin：root ， root
+HeiBlog：lzkenn ， 123456
+logo： 标志客
+icon： iconfont
+
+第一天个人中心授权上登录：
+首先使用button标签中的属性值open-type="getUserInfo"（小程序中规定只有button可以使用），设置bindgetuserinfo="bindGetUserInfo"监听授权访问，在js中写入bindGetUserInfo函数，通过e.detail.userInfo可获得登录信息将他存入全局属性中userInfo中
+
+在云端新建云函数login，通过const wxInfo = cloud.getWXContext() return {
+    wxInfo,
+  }获取openid值（openid为用户唯一的识别标识）
+
+在app小程序端在bindGetUserInfo函数中通过wx.cloud.callFunction获取云端返回的值将openid值存入全局属性userInfo.openid中，通过this.setData将值渲染到小程序端
+
+第二天：
+新闻资讯静态页面
+
+第三天：
+新闻资讯数据库设计
+添加数据：
+
+文章标题：string
+作者：string，
+日期：date，
+内容：array，
+图片;array
+类别：string
+点击量：number
+
+1.为icon添加事件：点击时获取点击的index值，通过index的值获取icon的分类名称，然后通过wx.navigateTo跳转到分类的列表页面通过url值传递icon的分类名称，在分类列表页面通过options.category获取url中的值，使用云函数根据分类名称查询云数据库中的列表信息，在通过setdata将数据渲染到视图层
+
+第四天：
+
+1.格式化日期：
+编写util.js文件处理日期格式并暴露出去，在需要格式化日期的js文件中使用require("文件相对地址")调用，将后台的数据查询出来将日期格式化，将格式化时期赋值给查询出的日期用this.setdata将数据渲染到视图层
+
+2.最新资讯根据日期降序查询数据并渲染到视图层
+
+3.*******轮播图根据点击量查询出来渲染到视图层（修改：每次点击后点击数量改变会造成轮播图更新过快）
+
+4.为最新资讯列表的每一项绑定点击事件，并通过data-id="{{ 文章id值 }}"存储id值，在绑定函数中可通过e.currentTarget.dataset.id获取到存储的id值，使用wx.navigateTo通过url问号传参的方式跳转到对应的详情页面，具体方法是在详情页面的js生命周期函数为监听页面加载中通过options的值获取到url中传递过来的id值，通过文章的id值查询到对应的详情页面
+
+第五天：
+
+1.点击量
+
+编写云函数更新，根据url传来ID值更新对应的文章点击数，使count的值自增1，具体为操作位为先创建云函数，在js中写入云函数入口，并初始化云函数指定当前的云函数环境，然后编写更新的异步函数 ，设置参数event，event中包含小程序端传进来的参数，解构出id值，根据id值更新count，使用db.collection('数据库名称').doc(id).update（{data：{count：db.command.inc(1)}}）实现自增1并更新，在小程序端调用 wx.cloud.callFunction（{name：‘云函数名称’，data：{id：‘要更新的文章id值’}}）函数实现。注意小程序端由于用户访问数据库的权限会造成无法进行更新操作，所以在云函数中写入，云函数写完要配置config.json文件,并部署上传。
+
+2.图片懒加载功能
+
+在需要懒加载的image中直接加lazy-load:true标签就能完成此项功能
+
+3.下拉刷新
+
+在app.json或者需要下拉刷新的page中配置json文件，app.json中将 "enablePullDownRefresh": true添加到window下，page中加入到对应的json文件中，然后在需要使用到的page中加入下拉监听函数 onPullDownRefresh: function (){}，在函数中调用下拉刷新要重新加载的数据。为了方便调用把之前小程序端写入的增删改查操作放入函数中，
+
+4.上拉加载更多
+
+在实现上拉加载更多时首先先将函数查询进行分页处理，定义每一页列表中要显示的个数pages和当前页数page，查询时添加条件skip（this.page *pages).limt(pages)从第几条数据开始查询，查询几条，之后添加页面上拉触底事件的处理函数onReachBottom: function（），在函数中将this.page+1,并调用数据分页查询的函数，注意此时应该将数据加到之前的数据之后所以要先判断此时是数据初始化还是加载更多数据，可以在查询函数中设置形参isInit，将页面是初始化和下拉刷新的函数中放入实参值true，在查询数据函数中判断isInit的布尔值，如果是加载更多就将查询到的值最加到当前数据在setdata到渲染层，代码为this.setdata({"接受数据库回调数据的名称"：this.data.接受数据库回调数据的名称.concat(数据库返回的值)})，完成后发现下拉后在刷新初始化的数据不完整，是由于下拉后pages的值不为0导致，所以在查询前先判断isInit，然后将0赋值给this.page 
+
+第七天
+0.个人中心添加发布文章功能
+
+1.富文本编辑器
+
+2.表单验证
+
+3.提交表单信息

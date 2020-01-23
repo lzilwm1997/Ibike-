@@ -1,0 +1,23 @@
+<!-- <wxs src = "../../../util/util.wxs"  module = "util" /> -->
+<view class="iconHeader">
+  <text class="icon-title">{{ icon_title }}</text>
+</view>
+<view class="icon-content">
+<!-- 内容列表 -->
+  <view class="icon-list" wx:for="{{ list }}" wx:key="index" wx:for-item="list" id="{{ list._id }}" bindtap="listNavHandle">
+        <view class="icon-left">
+          <view class="title">
+            <view class="titleText">{{ list.article_title }}</view>  
+          </view>
+          <view class="count">
+              <!-- <text class="icon-"></text> -->
+              <text class="playcount">{{ list.category }}</text>
+              <text class="jicount">{{ list.count }}点击</text>
+              <text class="Newsdate">{{ list.publishDate }}</text>
+          </view>
+        </view>
+        <view class="icon-right">
+          <image src="{{ list.image }}" mode="aspectFill" lazy-load="true"></image>
+        </view>
+  </view>
+</view>
