@@ -10,3 +10,8 @@
 
 - [云开发文档](https://developers.weixin.qq.com/miniprogram/dev/wxcloud/basis/getting-started.html)
 
+## 帮助
+
+- cloudfunctions:云函数代码
+
+- miniprogram:小程序端代码
