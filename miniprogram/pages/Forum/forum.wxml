@@ -1,0 +1,9 @@
+<view class="page">
+  <view class="content">
+    <view class="list" wx:for="{{forumList}}" wx:key="index" bindtap="forumHandle" id="{{ item._id }}">
+      <image mode="spaceFill" src="{{item.Coverimage}}"></image>
+      <text>{{item.title}}</text>
+    </view>    
+  </view>
+   
+</view>

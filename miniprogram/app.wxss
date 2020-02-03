@@ -13,5 +13,9 @@ page {
   justify-content: flex-start;
 }
 
+.wxParse-hr{
+  height: 2px;
+  background-color: #ccc
+}
 
 
