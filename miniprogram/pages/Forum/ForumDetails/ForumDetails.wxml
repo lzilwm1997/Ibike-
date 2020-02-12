@@ -1,1 +1,45 @@
-<view>details</view>
+<view>
+  <view class="top" style="background-image:url('{{ forum.Coverimage }}');">{{ forum.title }}</view>
+  <view class="contain">
+    <view class="label">
+      <image src="/images/label.png" mode="spaceFill"></image>
+      <text class="left">全部</text>
+      <text class="right">最新发表</text>
+    </view>
+    <view class="list" wx:for="{{ forumpost }}" wx:key="index" catchtap="toContentHandle" id="{{ item._id }}">
+      <view class="listTop">
+        <view class="userInfo">
+          <image src="{{ item.user[0].avatarUrl }}" lazy-load="true"></image>
+          <text class="userName">{{ item.user[0].nickName }}</text>
+        </view>
+        <text class="time">{{ item.time }}</text>
+      </view>
+      <view class="listCenter">
+        <view class="boxText">{{ item.title }}</view>
+         <block wx:if="{{ item.image.length > 0 }}">
+          <view class="boxImage" wx:if="{{ item.image.length == 1 }}">
+            <image mode="aspectFill" src="{{ item.image[0] }}" lazy-load="true"></image>
+          </view>
+          <block wx:if="{{ item.image.length > 1 }}">
+          <view class="boxImages" >
+            <image mode="aspectFill" src="{{ item }}" wx:for="{{ item.image }}" index="" lazy-load="true" wx:key = "index"></image>
+          </view>
+         </block>
+         </block>
+      </view>
+      <view class="listBottom">
+        <view class="point">
+          <image src="../../../images/point.png"></image>
+          <text>0</text>
+        </view>
+        <view class="comment">
+          <image src="../../../images/comment.png"></image>
+          <text>0</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="publishBtn" bindtap="toPublishHandle">
+    <image src="../../../images/publish.png"></image>
+  </view>
+</view>

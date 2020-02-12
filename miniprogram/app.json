@@ -1,7 +1,7 @@
 {
   "pages": [
+    "pages/Login/Login",
     "pages/NewsInformation/news",
-    "pages/Dynamic/dynamic",
     "pages/Forum/forum",
     "pages/Personal/personal"
   ],
@@ -24,12 +24,6 @@
         "text": "新闻资讯",
         "iconPath": "images/news.png",
         "selectedIconPath": "images/news-action.png"
-      },
-      {
-        "pagePath": "pages/Dynamic/dynamic",
-        "text": "骑游动态",
-        "iconPath": "images/dynamic.png",
-        "selectedIconPath": "images/dynamic-action.png"
       },
       {
         "pagePath": "pages/Forum/forum",

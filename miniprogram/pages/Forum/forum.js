@@ -7,12 +7,16 @@ Page({
   data: {
   },
   getForumList:function(){
+    wx.showLoading({
+      title: '加载中',
+    })
     db.collection('ForumList')
     .get({
       success: res => {
         this.setData({
           forumList:res.data
         })
+        wx.hideLoading();
       }
     })
   },

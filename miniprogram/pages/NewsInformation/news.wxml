@@ -1,3 +1,4 @@
+<!-- <wxs src = "../../util/util.wxs"  module = "filter" /> -->
 <!-- 轮播图 -->
 <view class="swiper-container">
   <swiper class="swiper" autoplay="true" circular="true" 
@@ -48,7 +49,7 @@
               <!-- <text class="icon-"></text> -->
               <text class="playcount">{{ item.category }}</text>
               <text class="jicount">{{ item.count }}点击</text>
-              <text class="Newsdate">{{ item.publishDate }}</text>
+              <text class="Newsdate">{{item.publishDate}}</text>
           </view>
         </view>
       </view>

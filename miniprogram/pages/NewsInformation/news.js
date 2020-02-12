@@ -84,6 +84,14 @@ Page({
       .limit(pages)
       .get({
         success: res => {
+          wx.hideLoading()
+          if(res.data.length <= 0){
+            wx.showToast({
+              title: '全部加载完毕',
+              icon:'success'
+            })
+            return false
+          }
           res.data.forEach(function (data, index) {
             return data.publishDate = util.formatDate(data.publishDate, 'MM-DD')        
           })
@@ -95,11 +103,13 @@ Page({
             this.setData({
               latestNews: this.data.latestNews.concat(res.data)
             })
-          }
+          }          
           wx.stopPullDownRefresh()
+        },
+        fail: err => {
+          console.log('nook')
           wx.hideLoading()
         }
-        
       }
       )
     },
@@ -158,12 +168,11 @@ Page({
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: function (e) {
     this.page += 1,
     // console.log(this.page)
     this.getlatestNews(false)
   },
-
   /**
    * 用户点击右上角分享
    */

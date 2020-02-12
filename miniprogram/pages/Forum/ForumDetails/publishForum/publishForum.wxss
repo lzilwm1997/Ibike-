@@ -1,0 +1,80 @@
+.title, .content {
+  padding: 30rpx;
+  border-bottom: 1px solid #edf0f2;
+}
+
+input, textarea {
+  font-size: 12px;
+}
+
+.fontNum,.category {
+  font-size: 12px;
+  color: #999;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.chooseImg {
+  display: flex;
+}
+
+.chooseImgBox {
+  margin: 30rpx;
+  position: relative;
+}
+
+.chooseImgBox icon {
+  position: absolute;
+  right: -15rpx;
+  top: -15rpx;
+}
+
+.chooseImgBox image {
+  width: 180rpx;
+  height: 180rpx;
+}
+
+.chooseImgBoxMore {
+  width: 180rpx;
+  height: 180rpx;
+  background-color: #edf0f2;
+  margin: 30rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chooseImgBoxMore i {
+  width: 150rpx;
+  height: 150rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.submit {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  margin-bottom: 30rpx;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+
+}
+
+.submit view {
+  width: 40%;
+  height: 100rpx;
+  background-color: #707070;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  border-radius: 10rpx;
+  align-items: center;
+  font-size: 20px;
+}
+
+.submit .blue {
+  background-color: #2779c9;
+}

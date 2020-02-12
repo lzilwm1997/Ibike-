@@ -244,10 +244,10 @@ Page({
       count: 1,
       success: function (res) {
         wx.showToast({
-          title: '正在上传...',
+          title: '插入成功',
           icon: 'loading',
           mask: true,
-          duration: 10000
+          duration: 2000
         })
         const filePath = res.tempFilePaths[0]
         const tempFile = filePath.split('.')
