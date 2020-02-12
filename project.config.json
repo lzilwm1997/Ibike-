@@ -11,7 +11,7 @@
 	},
 	"appid": "wxeae755797f0d7e24",
 	"projectname": "Ibike",
-	"libVersion": "2.10.0",
+	"libVersion": "2.10.1",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
 	"cloudfunctionTemplateRoot": "cloudfunctionTemplate",

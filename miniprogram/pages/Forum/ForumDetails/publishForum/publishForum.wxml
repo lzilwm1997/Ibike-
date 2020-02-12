@@ -1,0 +1,25 @@
+<view class="title">
+  <input placeholder="点击添加标题" auto-focus="true" placeholder-style="color:#999" maxlength="30" bindinput="getTitle" />
+</view>
+<view class="content">
+  <textarea maxlength="200" bindinput="textareaCtrl" placeholder-style="color:#999;" placeholder="说点什么吧" />
+  <view class='fontNum'>{{content.length}}/200</view>
+</view>
+<view class="chooseImg">
+  <block wx:for="{{tempImg}}" wx:key="index" wx:for-index="index">
+    <view class="chooseImgBox">
+      <image src="{{item}}" mode="aspectFill" />
+      <icon type="clear" size="30" color="red" catchtap="removeImg" data-index="{{index}}"></icon>
+    </view>
+  </block>
+  <!-- 判断图片 大于等于3张的时候 取消 更多 -->
+  <block wx:if="{{tempImg.length < 3}}">
+    <view class="chooseImgBoxMore" catch:tap="choosePhoto">
+      <i class="iconfont iconjia"></i>
+    </view>
+  </block>
+</view>
+<view class='submit' catch:tap="submitPost">
+  <view class='blue' id="1">提交</view>
+  <view id="0">取消</view>
+</view>

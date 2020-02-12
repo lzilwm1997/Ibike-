@@ -1,3 +1,4 @@
+const db = wx.cloud.database()
 Page({
 
   /**
@@ -6,12 +7,36 @@ Page({
   data: {
     
   },
-
+  //根据点击的模块进入不同的社区模块
+  getForum:function(value){
+    wx.showLoading({
+      title: '加载中',
+      mask:true
+    })
+    db.collection('ForumList')
+      .doc(value)
+    .get({
+      success:res => {
+        this.setData({
+          forum: res.data
+        })
+        wx.hideLoading();
+      }
+    })
+  },
+  //点击按钮跳转到发布页面
+  toPublishHandle:function(){
+    let id = this.data.forum._id
+    wx.navigateTo({
+      url: '/pages/Forum/ForumDetails/publishForum/publishForum?id=' + id,
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options)
+    this.getForum(options.id)
+
   },
 
   /**
