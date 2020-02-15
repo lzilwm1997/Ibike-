@@ -1,4 +1,3 @@
-<!-- <wxs src = "../../../util/util.wxs"  module = "util" /> -->
 <view class="iconHeader">
   <text class="icon-title">{{ icon_title }}</text>
 </view>
@@ -13,7 +12,7 @@
               <!-- <text class="icon-"></text> -->
               <text class="playcount">{{ list.category }}</text>
               <text class="jicount">{{ list.count }}点击</text>
-              <text class="Newsdate">{{ list.publishDate }}</text>
+              <text class="Newsdate">{{list.publishDate}}</text>
           </view>
         </view>
         <view class="icon-right">

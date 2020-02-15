@@ -1,0 +1,122 @@
+.top{
+  width: 100%;
+  height: 350rpx;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: rgba(0, 0, 0, .3);
+  background-blend-mode: multiply;
+  padding: 50rpx 0 0 50rpx;
+  color: #fff;
+}
+.label{
+  height: 50rpx;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.label image{
+  height: 50rpx;
+  width: 100rpx;
+  position: absolute;
+  z-index: -1;
+}
+.label .left{
+  color: #fff;
+  font-size: 24rpx;
+  padding-left: 20rpx;
+}
+.label .right{
+  color: #333;
+  font-size: 24rpx;
+  padding-right: 20rpx;
+}
+.list{
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 30rpx;
+  border-bottom: 1px solid #EDF0F2;
+}
+.listTop{
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.userInfo{
+  display: flex;
+  align-items: center;
+}
+.userInfo image{
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+}
+.userInfo .userName{
+  font-size: 25rpx;
+  margin-left: 20rpx;
+}
+.listTop .time{
+  font-size: 25rpx;
+  color: #cdcdcd;
+}
+.boxText{
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  align-content: center;
+  font-size: 30rpx;
+  color: #cdcdcd;  
+}
+/* .boxImagel{
+  height: 200rpx;
+  display: flex;
+  justify-content: space-between;
+} */
+.boxImage image{
+  margin-top: 10rpx;
+  width: 350rpx;
+  max-height: 250rpx;
+}
+/* .boxImages{
+  display: flex;
+  justify-content: space-around;
+} */
+.boxImages image{
+   margin-top: 10rpx;
+   width: 200rpx;
+   max-height:200rpx;
+   margin-right: 10rpx;
+}
+.listBottom{
+  margin-top: 10rpx;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-bottom: 15rpx;
+}
+.point image,.comment image{
+  width: 25rpx;
+  height: 25rpx;
+  padding-left: 50rpx;
+
+}
+.point text,.comment text{
+  color: #333;
+  font-size: 25rpx; 
+  padding-left: 10rpx;
+}
+.publishBtn{
+  position: fixed;
+  bottom: 50rpx;
+  right: 50rpx;
+}
+.publishBtn image{
+  width: 100rpx;
+  height: 100rpx;
+}

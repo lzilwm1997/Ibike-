@@ -2,12 +2,18 @@
 //option      格式（年月日  就输入YY-MM-DD   时分  就输入 hh-mm）
 //时间格式功能 
 function formatDate (date, option) {
-  // var date = getDate(timestamp)
+  //当前日期
+  var today = new Date()
+  var thisYear = today.getFullYear()
+  var thisDay = today.getDate()
+  var thisMonth = today.getMonth() + 1 
+  //服务器传入日期
+  var date = new Date(date)
   var year = date.getFullYear()
   var getMonth = date.getMonth() + 1 
   var month = getMonth < 10 ? '0' + getMonth : getMonth
-  var day = date.getDate() < 10 ? '0' + date.getDate() : date.getDate()
-
+  var getDay = date.getDate()
+  var day = getDay < 10 ? '0' + getMonth : getMonth
   var hour = function () {
     return date.getHours() < 10 ? '0' + date.getHours() : date.getHours()
   }
@@ -55,7 +61,19 @@ function formatDate (date, option) {
   if (option == 'ss') return second();
 
   //默认时分秒年月日
-  return year + '-' + month + '-' + day + ' ' + hour() + ':' + minute() + ":" + second();
+  var defaultTime = function (){
+    if (year == thisYear && getMonth == thisMonth && getDay == thisDay) {
+      return '今天' + ' ' + hour() + ':' + minute();
+    } else if (year == thisYear && getMonth == thisMonth && getDay == thisDay - 1) {
+      return '昨天' + ' ' + hour() + ':' + minute();
+    } else if (year == thisYear) {
+      return month + '-' + day + ' ' + hour() + ':' + minute();
+    } else {
+      return year + '-' + month + '-' + day;
+    }
+  }
+  return defaultTime()
+  
 
 }
 

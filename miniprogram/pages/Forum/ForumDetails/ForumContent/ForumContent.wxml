@@ -1,0 +1,22 @@
+ <view class="title">{{ ForumContent.title }}</view>
+<view class="page">
+    <view class="user">
+      <view class="left">
+        <image src="{{ ForumContent.user[0].avatarUrl }}"></image>
+        <view class="text">
+          <text>{{ identity }} {{ ForumContent.user[0].nickName }}</text>
+          <text>{{ ForumContent.time }}</text>
+        </view>
+      </view>
+      <view class="right"></view>
+    </view>
+  <view class="content">
+    <view class="contentText">{{ ForumContent.content }}</view>
+    <block wx:if="{forumpost.image.length > 0}">
+      <view class="contentimage">
+        <image src="{{ item }}" bindload="imageLoad" data-index="{{ index }}" 
+style="width:{{ setImage[index].width }}rpx; height:{{ setImage[index].height }}rpx;" wx:for="{{ ForumContent.image }}" wx:key="index"></image>
+    </view>
+    </block>
+  </view>
+</view>
