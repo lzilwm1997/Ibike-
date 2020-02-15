@@ -6,6 +6,7 @@
       <text class="left">全部</text>
       <text class="right">最新发表</text>
     </view>
+<<<<<<< HEAD
     <view class="list" wx:for="{{ forumpost }}" wx:key="index" catchtap="toContentHandle" id="{{ item._id }}">
       <view class="listTop">
         <view class="userInfo">
@@ -26,6 +27,23 @@
           </view>
          </block>
          </block>
+=======
+    <view class="list">
+      <view class="listTop">
+        <view class="userInfo">
+          <image src="../../../images/icon-1.png"></image>
+          <text class="userName">lzkenn</text>
+        </view>
+        <text class="time">01-24 23:00</text>
+      </view>
+      <view class="listCenter">
+        <view class="boxText">
+         哈哈哈哈哈哈啊哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈啊哈哈哈哈哈
+         </view>
+         <view class="boxImage">
+          <image mode="aspectFill" src="cloud://i-bike-n0wy9.692d-i-bike-n0wy9-1301023886/uploadNews/news-1580642125156.jpg"></image>
+         </view>
+>>>>>>> eff03f0cd7b89798462764e8cb36b0583d820cee
       </view>
       <view class="listBottom">
         <view class="point">
@@ -38,6 +56,63 @@
         </view>
       </view>
     </view>
+<<<<<<< HEAD
+=======
+    <view class="list">
+      <view class="listTop">
+        <view class="userInfo">
+          <image src="../../../images/icon-1.png"></image>
+          <text class="userName">lzkenn</text>
+        </view>
+        <text class="time">01-24 23:00</text>
+      </view>
+      <view class="listCenter">
+        <view class="boxText">
+         哈哈哈哈哈哈啊哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈啊哈哈哈哈哈
+         </view>
+         <view class="boxImage">
+          <image mode="aspectFill" src="cloud://i-bike-n0wy9.692d-i-bike-n0wy9-1301023886/uploadNews/news-1580642125156.jpg"></image>
+         </view>
+      </view>
+      <view class="listBottom">
+        <view class="point">
+          <image src="../../../images/point.png"></image>
+          <text>0</text>
+        </view>
+        <view class="comment">
+          <image src="../../../images/comment.png"></image>
+          <text>0</text>
+        </view>
+      </view>
+    </view>
+    <view class="list">
+      <view class="listTop">
+        <view class="userInfo">
+          <image src="../../../images/icon-1.png"></image>
+          <text class="userName">lzkenn</text>
+        </view>
+        <text class="time">01-24 23:00</text>
+      </view>
+      <view class="listCenter">
+        <view class="boxText">
+         哈哈哈哈哈哈啊哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈啊哈哈哈哈哈
+         </view>
+         <view class="boxImage">
+          <image mode="aspectFill" src="cloud://i-bike-n0wy9.692d-i-bike-n0wy9-1301023886/uploadNews/news-1580642125156.jpg"></image>
+         </view>
+      </view>
+      <view class="listBottom">
+        <view class="point">
+          <image src="../../../images/point.png"></image>
+          <text>0</text>
+        </view>
+        <view class="comment">
+          <image src="../../../images/comment.png"></image>
+          <text>0</text>
+        </view>
+      </view>
+    </view>      
+>>>>>>> eff03f0cd7b89798462764e8cb36b0583d820cee
   </view>
   <view class="publishBtn" bindtap="toPublishHandle">
     <image src="../../../images/publish.png"></image>

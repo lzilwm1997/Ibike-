@@ -83,6 +83,7 @@
   width: 350rpx;
   max-height: 250rpx;
 }
+<<<<<<< HEAD
 /* .boxImages{
   display: flex;
   justify-content: space-around;
@@ -93,6 +94,8 @@
    max-height:200rpx;
    margin-right: 10rpx;
 }
+=======
+>>>>>>> eff03f0cd7b89798462764e8cb36b0583d820cee
 .listBottom{
   margin-top: 10rpx;
   display: flex;

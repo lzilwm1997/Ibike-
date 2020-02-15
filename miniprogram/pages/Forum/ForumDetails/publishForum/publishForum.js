@@ -90,20 +90,40 @@ Page({
         content: that.data.content,
         title: that.data.title,
         image: that.data.cloudPath,
+<<<<<<< HEAD
         // poster_id: getApp().globalData.openid,
         time: db.serverDate()
       },
       success:(res) => { 
           wx.hideLoading();
+=======
+        poster_id: getApp().globalData.openid
+      },
+      success:res => {
+        console.log('插入成功')
+        that.clearData()
+        if(that.data.add){
+          
+>>>>>>> eff03f0cd7b89798462764e8cb36b0583d820cee
           wx.showToast({
             title: '发布成功',
             icon: 'success',
             success:() =>{
+<<<<<<< HEAD
               wx.redirectTo({
                 url: '/pages/Forum/ForumDetails/ForumDetails?id=' + that.data.categoryId,
               })
             }
           })    
+=======
+              wx.navigateTo({
+                url: '/pages/Forum/ForumDetails/ForumDetails?id=' + that.data.categoryId,
+              })
+            }
+          })
+        }
+       
+>>>>>>> eff03f0cd7b89798462764e8cb36b0583d820cee
       },
       fail: err =>{
         console.log(err)
