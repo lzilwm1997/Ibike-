@@ -1,0 +1,12 @@
+/* miniprogram/pages/Erreo/404/404.wxml.wxss */
+.page{
+  height: 500rpx;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  margin-bottom: 30rpx;
+}
+text{
+  display: flex;
+  justify-content: center;
+}

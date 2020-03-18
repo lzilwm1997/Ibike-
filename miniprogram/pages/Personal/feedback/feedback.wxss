@@ -1,0 +1,18 @@
+page{
+  background-color: #F7F7F7;
+}
+.information{
+  background-color: #fff;
+  margin-top: 20rpx;
+  padding: 20rpx 0 0 20rpx; 
+  font-size: 14px;
+}
+button{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+button:not([size='mini']) {
+  width: 100%;
+}
+

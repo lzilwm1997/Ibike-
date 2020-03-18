@@ -1,4 +1,3 @@
-// 云函数入口文件
 const cloud = require('wx-server-sdk')
 
 cloud.init({
@@ -6,9 +5,10 @@ cloud.init({
 })
 const db = cloud.database()
 const $ = db.command.aggregate
-function getList(lists, page, category) {
+function getContent(id) {
   return new Promise((resolve, reject) => {
-    db.collection('ForumPost').aggregate()
+    db.collection('ForumComment').aggregate()
+      .sort({ comment_time: -1 })
       .lookup({
         from: 'Users',
         localField: '_openid',
@@ -16,23 +16,14 @@ function getList(lists, page, category) {
         as: 'user',
       })
       .lookup({
-        from: 'ForumComment',
+        from: 'commentLike',
         localField: '_id',
-        foreignField: 'ForumPost_id',
-        as: 'comment',
-      })
-      .lookup({
-        from: 'ForumLike',
-        localField: '_id',
-        foreignField: 'ForumPost_id',
-        as: 'like',
+        foreignField: 'comment_id',
+        as: 'commentLike',
       })
       .match({
-        category_id: category
+        ForumPost_id: id
       })
-      .sort({time:-1})
-      .skip(page * lists)
-      .limit(lists)
       .end()
       .then(res => resolve(res))
       .catch(err => reject(err))
@@ -40,7 +31,7 @@ function getList(lists, page, category) {
 }
 // 云函数入口函数
 exports.main = async (event, context) => {
-  let { lists, page, category} = event
-  let data = await getList(lists, page, category)
+  let { id } = event
+  let data = await getContent(id )
   return data
 }

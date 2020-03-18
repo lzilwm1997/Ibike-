@@ -1,4 +1,4 @@
-<import src="../../../wxParse/wxParse.wxml"/> 
+<!-- <import src="../../../wxParse/wxParse.wxml"/>  -->
 <form bindsubmit="formSubmit" bindreset="formReset">
     <!-- <toast hidden="{{toastHidden}}" bindchange="onToastChanged">
         {{toastText}}

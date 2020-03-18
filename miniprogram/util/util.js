@@ -7,17 +7,26 @@ function formatDate (date, option) {
   var thisYear = today.getFullYear()
   var thisDay = today.getDate()
   var thisMonth = today.getMonth() + 1 
+  var thisHour = today.getHours()
+  var thisMinute = today.getMinutes()
   //服务器传入日期
   var date = new Date(date)
-  var year = date.getFullYear()
+  
   var getMonth = date.getMonth() + 1 
-  var month = getMonth < 10 ? '0' + getMonth : getMonth
   var getDay = date.getDate()
+  var getHour = date.getHours()
+  var getMinute = date.getMinutes()
+  
+  var year = date.getFullYear()
+  
+  var month = getMonth < 10 ? '0' + getMonth : getMonth
+ 
   var day = getDay < 10 ? '0' + getMonth : getMonth
+  
   var hour = function () {
     return date.getHours() < 10 ? '0' + date.getHours() : date.getHours()
   }
-
+ 
   var minute = function () {
     return date.getMinutes() < 10 ? '0' + date.getMinutes() :     date.getMinutes();
   }
@@ -62,7 +71,12 @@ function formatDate (date, option) {
 
   //默认时分秒年月日
   var defaultTime = function (){
-    if (year == thisYear && getMonth == thisMonth && getDay == thisDay) {
+    if (year == thisYear && getMonth == thisMonth && getDay == thisDay && getHour == thisHour && getMinute == thisMinute){
+      return '刚刚';
+    } else if (year == thisYear && getMonth == thisMonth && getDay == thisDay && getHour == thisHour) {
+      var lastMinute = thisMinute - getMinute
+      return lastMinute + '分钟前'
+    } else if (year == thisYear && getMonth == thisMonth && getDay == thisDay) {
       return '今天' + ' ' + hour() + ':' + minute();
     } else if (year == thisYear && getMonth == thisMonth && getDay == thisDay - 1) {
       return '昨天' + ' ' + hour() + ':' + minute();

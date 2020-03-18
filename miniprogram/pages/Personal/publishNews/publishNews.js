@@ -32,7 +32,7 @@ Page({
         wx.showToast({
           title: '发布成功',
           icon: 'success',
-          duration: 2000
+          duration: 200
         })
         that.setData({
           title: null,
@@ -153,12 +153,17 @@ Page({
           return false
         }
         console.log(res)
+        wx.showLoading({
+          title: '处理中',
+          mask:true
+        })
         that.setData({
           content:res.html
         })
       }
     })
-    console.log(params)
+    console.log('ok')
+    wx.hideLoading();
     //验证成功，上传封面
     const cloudPath = this.data.coverImg.coverCloudSrc
     const filePath = this.data.coverImg.coverimgSrc
@@ -243,11 +248,8 @@ Page({
     wx.chooseImage({
       count: 1,
       success: function (res) {
-        wx.showToast({
-          title: '插入成功',
-          icon: 'loading',
-          mask: true,
-          duration: 2000
+        wx.showLoading({
+          title: '插入中',
         })
         const filePath = res.tempFilePaths[0]
         const tempFile = filePath.split('.')
@@ -260,13 +262,11 @@ Page({
             that.editorCtx.insertImage({
               src: res.fileID,
               data: {
-                id: 'abcd',
-                role: 'god'
               },
               width: '100%',
               success: function (res) {
-               
-                wx.hideToast();
+               console.log(res)
+                wx.hideLoading();
               },
               fail: function (res) {
                 console.log(res)

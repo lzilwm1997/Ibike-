@@ -44,13 +44,59 @@
 		"game": {
 			"list": []
 		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
 		"miniprogram": {
-			"current": 0,
+			"current": -1,
 			"list": [
 				{
 					"id": -1,
 					"name": "db guide",
-					"pathName": "pages/databaseGuide/databaseGuide"
+					"pathName": "pages/databaseGuide/databaseGuide",
+					"query": ""
+				},
+				{
+					"id": 1,
+					"name": "pages/Forum/ForumDetails/ForumContent/ForumContent",
+					"pathName": "pages/Forum/ForumDetails/ForumContent/ForumContent",
+					"query": "id=d68532785e4761800ff13fab153b1f91",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/Forum/ForumDetails/ForumContent/ForumContent",
+					"pathName": "pages/Forum/ForumDetails/ForumContent/ForumContent",
+					"query": "id='d68532785e4761800ff13fab153b1f91'",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/Personal/personal",
+					"pathName": "pages/Personal/personal",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/Personal/myPublish/myPublish",
+					"pathName": "pages/Personal/myPublish/myPublish",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/Forum/ForumDetails/ForumDetails",
+					"pathName": "pages/Forum/ForumDetails/ForumDetails",
+					"query": "id=0ff1542c-8e9e-462d-8a37-d0ae2833c145",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/Erreo/nopage/nopage",
+					"pathName": "pages/Erreo/nopage/nopage",
+					"scene": null
 				}
 			]
 		}

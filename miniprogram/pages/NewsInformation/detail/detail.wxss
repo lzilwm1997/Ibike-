@@ -31,9 +31,10 @@ view{
 }
 .footer{
   margin: 10px 0;
-  border-top: 1px solid #ccc;
   color: #ccc;
   text-align: center;
 }
-
+.footer button{
+  width:100%
+}
 

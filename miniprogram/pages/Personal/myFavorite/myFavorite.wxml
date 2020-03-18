@@ -1,0 +1,16 @@
+<view>
+  <view class="list" catchtap="toContentHandle" wx:for="{{ favoriteList }}" id="{{ item.forum[0]._id }}" wx:key="index" catchtap="listHandle" wx:if="{{ item.forum.length > 0 }}">
+    <view class="listTop">
+      <view>{{ item.forum[0].time }}</view>
+    </view>
+    <view class="listCenter">
+      <block wx:if="{{item.forum[0].image.length > 0 }}">
+        <view class="boxImage">
+          <image mode="aspectFill" src="{{ item.forum[0].image[0] }}" lazy-load="true"></image>
+        </view>
+      </block>
+      <view class="boxText">{{ item.forum[0].title }}</view>
+    </view>
+  </view>
+  <view class="end">{{ end }}</view>
+</view>

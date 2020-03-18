@@ -1,0 +1,5 @@
+<!--miniprogram/pages/Erreo/404/404.wxml.wxml-->
+<view class="page">
+  <icon type="warn" color="red" size="60"></icon>
+</view>
+<text>您查看的文章已被删除</text>

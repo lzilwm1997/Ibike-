@@ -6,13 +6,13 @@
   </view>
   <view class="cells">
     <view class="divider"></view>
-    <navigator class="item">我的帖子</navigator>
-    <navigator class="item">我的投稿</navigator>
-    <navigator class="item">我的收藏</navigator>
-    <navigator class="item">投稿</navigator>
-    <navigator class="item">反馈</navigator>
+    <navigator class="item"  url="./myPublish/myPublish">我的发布</navigator>
+    <!-- <navigator class="item">我的投稿</navigator> -->
+    <navigator class="item" url="./myFavorite/myFavorite">我的收藏</navigator>
+    <!-- <navigator class="item">投稿</navigator> -->
+    <navigator class="item" url="./feedback/feedback">反馈</navigator>
     <view class="divider"></view>
-    <navigator url="/pages/settings/settings" class="item">设置</navigator>
+    <!-- <navigator url="/pages/settings/settings" class="item">设置</navigator> -->
     <navigator class="item" url="./publishNews/publishNews" wx:if="{{userInfo.isManager}}">发布投稿</navigator>
   </view>
 

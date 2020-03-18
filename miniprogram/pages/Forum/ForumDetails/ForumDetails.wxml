@@ -6,7 +6,7 @@
       <text class="left">全部</text>
       <text class="right">最新发表</text>
     </view>
-    <view class="list" wx:for="{{ forumpost }}" wx:key="index" catchtap="toContentHandle" id="{{ item._id }}">
+    <view class="list" wx:for="{{ forumpost }}" wx:key="index" catchtap="toContentHandle" data-index="{{ index }}" id="{{ item._id }}" bindlongpress="pressHandle" >
       <view class="listTop">
         <view class="userInfo">
           <image src="{{ item.user[0].avatarUrl }}" lazy-load="true"></image>
@@ -30,11 +30,11 @@
       <view class="listBottom">
         <view class="point">
           <image src="../../../images/point.png"></image>
-          <text>0</text>
+          <text>{{ item.like.length }}</text>
         </view>
         <view class="comment">
           <image src="../../../images/comment.png"></image>
-          <text>0</text>
+          <text>{{ item.comment.length }}</text>
         </view>
       </view>
     </view>

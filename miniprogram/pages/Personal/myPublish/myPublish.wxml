@@ -1,0 +1,51 @@
+<view class="swiper-tab">
+  <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">帖子</view>
+  <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">评论</view>
+</view>
+
+<swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 31}}px" bindchange="bindChange">
+  <swiper-item>
+    <scroll-view scroll-y="true" style="height: auto">
+      <view class="listForum" wx:for="{{ forumList }}" wx:key="index" id="{{ item._id }}" catchtap="fourmListHandle">
+        <view class="forumTop">
+          <view class="time">{{ item.time }}</view>
+          <view class="delete" catchtap="delForumHandle" data-index="{{ index }}" id="{{ item._id }}"> 删除 </view>
+        </view>
+        <view class="forumCenter">
+          <text>{{ item.title }}</text>
+        </view>
+        <view class="forumBottom" wx:if="{{ item.image.length > 0 }}">
+          <image src="{{ item.image[0] }}" mode="aspectFill"></image>
+        </view>
+      </view>
+    </scroll-view>
+  </swiper-item>
+  <swiper-item>
+    <scroll-view scroll-y="true">
+      <view class="listComment" wx:for="{{ commentList }}" wx:key="index" data-index="{{ index }}" catchtap="commentHandle">
+        <view class="listTop">
+          <view class="userInfo">
+            <image src="{{ userInfo.avatarUrl }}" lazy-load="true"></image>
+            <view class="information">
+              <text class="userName"> {{ userInfo.nickName }} </text>
+              <text class="commentTime">{{ item.comment_time }}</text>
+            </view>
+          </view>
+          <view class="delete" data-index="{{ index }}" catchtap="deletecomHandle">删除</view>
+        </view>
+        <view class="commentCenter">
+          <text>{{ commentName}} {{ item.content }}</text>
+        </view>
+        <view class="commentBottom" wx:if="{{ !item.forumTitle }}">
+          <text>此贴已被删除</text>
+        </view>
+        <view class="commentBottom" wx:else>
+          <text>{{ forumName }} {{ item.forumTitle }}</text>
+        </view>
+      </view>
+    </scroll-view>
+  </swiper-item>
+</swiper>
+<view>
+
+</view>

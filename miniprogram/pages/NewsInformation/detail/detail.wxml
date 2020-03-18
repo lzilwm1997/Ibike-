@@ -7,6 +7,8 @@
   </view>
   <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
 
-  <view class="footer">文章结束</view>
+  <view class="footer">
+    <button open-type="share" type="primary" size="default">分享</button>
+  </view>
 </view>
 

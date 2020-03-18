@@ -35,8 +35,6 @@ radio{
   font-size: 16px;
   background-color: #fff;
   display: flex;
-  align-items: 
-
 }
 .text input{
   display: flex;
@@ -105,5 +103,8 @@ background-color: #1aad19;
   position: absolute;
   top: 40;
   right: 0;
+}
+.ql-active{
+  color: red
 }
 

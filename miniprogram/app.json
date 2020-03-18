@@ -3,7 +3,9 @@
     "pages/Login/Login",
     "pages/NewsInformation/news",
     "pages/Forum/forum",
-    "pages/Personal/personal"
+    "pages/Personal/personal",
+    "pages/Personal/myFavorite/myFavorite",
+    "pages/Personal/myPublish/myPublish"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

@@ -11,7 +11,7 @@
       <image src="{{item.image}}"  lazy-load="true" mode="aspectFill" catchtap="swiperdetailHandle" data-id="{{ swiperList[index]._id }}"></image>
     </swiper-item>
   </swiper>
-  <!-- 为了和喜马拉雅一致，自己需定制轮播图dots -->
+  <!-- 自己需定制轮播图dots -->
   <view class="dots">
     <block wx:for="{{imgList.length}}" wx:key="index">
       <!-- 根据index判断是否选中 -->

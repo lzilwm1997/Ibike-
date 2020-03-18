@@ -26,6 +26,14 @@ Page({
     .limit(6)
     .get({
       success: res => {
+        wx.hideLoading();
+        if (res.data.length <= 0) {
+          wx.showToast({
+            title: '全部加载完毕',
+            icon: 'success'
+          })
+          return false
+        }
         console.log(res)
         res.data.forEach(function (data, index) {
           // console.log(util.formatDate(data.publishDate, 'MM-DD'))
@@ -48,7 +56,6 @@ Page({
           })
         }
         wx.stopPullDownRefresh()
-        wx.hideLoading();
       }
     })},
 

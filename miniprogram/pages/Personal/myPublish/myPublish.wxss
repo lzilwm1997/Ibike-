@@ -1,0 +1,126 @@
+page{
+  background-color: #f6f6f6;
+}
+.swiper-tab {
+  margin-top: 5rpx;
+  width: 100%;
+  text-align: center;
+  line-height: 80rpx;
+  display: flex;
+  justify-content: space-around;
+  background-color: #fff;
+}
+
+.swiper-tab-list {
+  font-size: 14px;
+  color: #777;
+}
+
+.on {
+  color: #1C6FAD;
+  border-bottom: 3px solid #1C6FAD;
+}
+
+.swiper-box {
+  display: block;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 15rpx;
+}
+
+.swiper-box view {
+  text-align: center;
+}
+
+/* 帖子列表 */
+.listForum,.listComment {
+  background-color: #fff;
+  padding:0 30rpx;
+  margin-bottom: 6rpx;
+}
+.forumTop{
+  display: flex;
+  justify-content: space-between;
+  padding: 15rpx 0
+}
+.time{
+  font-size: 12px;
+  color: #ccc;
+  display: flex;
+  align-items: center;
+}
+.delete{
+  border: 1px solid #ccc;
+  border-radius: 10rpx;
+  color: #ccc;
+  padding: 0 10rpx;
+  font-size: 14px;
+}
+.forumCenter{
+  font-size: 16px;
+  padding-bottom: 20rpx;
+  display: flex;
+
+}
+.forumBottom{
+  overflow: hidden;
+  padding-bottom: 40rpx;
+
+}
+.forumBottom image{
+  height: 350rpx;
+}
+/* 评论列表 */
+.listTop{
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+.userInfo{
+  display: flex;
+  align-items: center;
+}
+.userInfo image{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+}
+.userInfo .userName{
+  display: flex;
+  justify-content: flex-start
+}
+.information{
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  padding-left: 15rpx;
+}
+.information .commentTime{
+  font-size: 12px;
+  color: #ccc;
+}
+.commentCenter{
+  margin-bottom: 40rpx;
+  display: flex;
+  justify-content: flex-start;
+}
+.commentBottom{
+  padding-bottom: 40rpx;
+  display: flex;
+  justify-content: flex-start;
+}
+.commentBottom text{
+  padding: 15rpx 30rpx;
+  background-color: #f6f6f6;
+  width: 100%;
+}
+text{
+  text-align: justify;
+}
+swiper-item {
+  overflow: scroll;
+}

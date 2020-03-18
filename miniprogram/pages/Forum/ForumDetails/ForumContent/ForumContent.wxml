@@ -1,22 +1,85 @@
- <view class="title">{{ ForumContent.title }}</view>
-<view class="page">
-    <view class="user">
-      <view class="left">
-        <image src="{{ ForumContent.user[0].avatarUrl }}"></image>
-        <view class="text">
-          <text>{{ identity }} {{ ForumContent.user[0].nickName }}</text>
-          <text>{{ ForumContent.time }}</text>
-        </view>
+<view wx:if="{{ page }}">
+<view class="title">{{ ForumContent.title }}</view>
+<view class="page" id="{{ ForumContent._id }}"  bindlongpress="forumPress">
+  <!-- 用户信息 -->
+  <view class="user">
+    <view class="left">
+      <image src="{{ ForumContent.user[0].avatarUrl }}"></image>
+      <view class="text">
+        <text class="userName">{{ ForumContent.user[0].nickName }}</text>
+        <text>{{ ForumContent.time }}</text>
       </view>
-      <view class="right"></view>
     </view>
+    <view class="right"></view>
+  </view>
+  <!-- 帖子内容 -->
   <view class="content">
     <view class="contentText">{{ ForumContent.content }}</view>
     <block wx:if="{forumpost.image.length > 0}">
       <view class="contentimage">
-        <image src="{{ item }}" bindload="imageLoad" data-index="{{ index }}" 
-style="width:{{ setImage[index].width }}rpx; height:{{ setImage[index].height }}rpx;" wx:for="{{ ForumContent.image }}" wx:key="index"></image>
-    </view>
+        <image src="{{ item }}" bindload="imageLoad" data-index="{{ index }}" style="width:{{ setImage[index].width }}rpx; height:{{ setImage[index].height }}rpx;" wx:for="{{ ForumContent.image }}" wx:key="index"></image>
+      </view>
     </block>
   </view>
+</view>
+<!-- 回帖区 -->
+<view class="commentForum">
+  <view class="commentHead">
+    <view class="txt">回帖</view>
+  </view>
+  <view class="commentList" wx:if="{{ commentList.length > 0 }}" wx:for="{{ commentList }}" wx:key="index" id="{{ item._id }}" data-index="{{ index }}" bindlongpress="commentPress">
+    <view class="commnetUser">
+      <view class="user">
+        <view class="left">
+          <image src="{{ item.user[0].avatarUrl }}"></image>
+          <view class="text">
+            <text class="userName">{{ item.user[0].nickName }}</text>
+            <text>{{ item.comment_time }}</text>
+          </view>
+        </view>
+        <view class="right">
+          <!-- <image src="/images/point.png" catchtap="commentLikeHandle"></image>
+          <text>1</text> -->
+        </view>
+      </view>
+    </view>
+    <view class="commentContent">
+      <text>{{ item.content }}</text>
+    </view>
+  </view>
+  <block wx:if="{{ commentList.length == 0 }}">
+    <view class="noComment" >
+    还没有回帖，快来抢沙发
+  </view>
+  </block>
+    
+  <view class="perfect">
+    已无更多消息
+  </view>
+  <view class="space"></view>
+</view>
+<!-- 底部评论输入功能框 -->
+<view wx:if="{{ hideInput }}" class="commentInput" catchtap="hideHandle">
+  <view class="inp">说两句...</view>
+  <view class="froumLike">
+   <image src="{{ likeImage }}" catchtap="likeHandle"></image>
+   <text>{{ likeCount }}</text>
+  </view>
+  <view class="froumCollect">
+    <image src="{{ collectImage }}" catchtap="collectHandle"></image>
+    <text>{{ collectCount }}</text>
+  </view>
+</view>
+<view wx:else class="publishComent">
+  <view class="top">
+    <text class="cancel" catchtap="cancelHandle">取消</text>
+    <text class="sure" catchtap="sureHandle">发送</text>
+  </view>
+  <view class="center">
+    <textarea placeholder="给你一个神评的机会" focus="true" cursor-spacing="100px" fixed="true" bindinput="getComment"></textarea>
+  </view>
+  <view class="bottom">
+    <image src="/images/face.png"></image>
+  </view>
+</view>
 </view>

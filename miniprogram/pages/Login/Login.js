@@ -12,7 +12,8 @@ Page({
       success: res => {
         // console.log(res.result.wxInfo.OPENID)
         getApp().globalData.openid = res.result.wxInfo.OPENID
-        console.log(getApp().globalData.openid)
+        // console.log(res)
+        // console.log(getApp().globalData.openid)
         that.queryUsreInfo()
       }
 
@@ -46,8 +47,6 @@ Page({
     })
   },
   bindGetUserInfo: function(e) {
-    console.log(this.data.length)
-    console.log('ok')
     if (e.detail.userInfo) {
       // console.log(getApp().globalData.openid)
       // console.log(e.detail.userInfo)
@@ -66,7 +65,7 @@ Page({
           },
           success: function(res) {
             //从数据库获取用户信息
-            console.log("插入小程序登录用户信息成功！");
+            // console.log("插入小程序登录用户信息成功！");
             that.setData({
               isHide: false
             })
@@ -94,7 +93,7 @@ Page({
         confirmText: '返回授权',
         success: function(res) {
           if (res.confirm) {
-            console.log('用户点击了“返回授权”')
+            // console.log('用户点击了“返回授权”')
           }
         }
       })
@@ -111,8 +110,8 @@ Page({
           this.setData({
             length: res.data.length
           })
-          console.log(this.data.length)
-
+          // console.log(this.data.length)
+          getApp().globalData.userInfo = res.data
         }
       })
   },

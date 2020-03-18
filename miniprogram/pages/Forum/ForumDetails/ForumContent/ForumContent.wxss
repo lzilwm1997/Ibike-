@@ -6,7 +6,7 @@
   font-size: 16px;
   display: flex;
   padding:30rpx; 
-  border-bottom:1px solid #ccc; 
+  border-bottom:1px solid #F7F7F7; 
   line-height: 30px;
   font-weight: 600;
 }
@@ -16,8 +16,8 @@
   align-items: center;
 }
 .user .left image{
-  width: 80rpx;
-  height: 80rpx;
+  width: 70rpx;
+  height: 70rpx;
   border-radius: 50%;
 }
 .user .left{
@@ -32,16 +32,158 @@
   justify-content: space-between;
   color: #ccc;
 }
+.user .left .text .userName{
+  color: #1C6FAD;
+  font-size: 30rpx;
+}
 .content{
   margin-top: 50rpx;
 }
 .contentText{
-  font-size: 12px;
-  color: #363636
+  font-size: 14px;
+  color: #363636;
+  margin-bottom: 20rpx;
 }
 .contentimage{
   margin-top: 10rpx;
 }
 .content image{
   margin-top: 20rpx;
+}
+/* 评论输入框 */
+.commentInput{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+  padding: 15rpx 0;
+  background-color: #fff;
+  width: 100%;
+  justify-content: space-around;
+}
+.commentInput .inp{
+background-color: #ddd;
+border-radius: 30rpx;
+height: 60rpx;
+font-size: 12px;
+padding-left: 20rpx;
+display: flex;
+align-items: center;
+color: #808080;
+width: 300rpx;
+}
+.commentInput image{
+  width: 50rpx;
+  height: 50rpx;
+}
+.froumCollect, .froumLike{
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+}
+.froumCollect text,.froumLike text{
+  padding-left: 10rpx;
+}
+/* 弹出输入框 */
+.publishComent{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  width: 100%;
+}
+.publishComent .top,.publishComent .center{
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  padding: 20rpx 40rpx 30rpx;
+}
+.cancel{
+  color: #ddd
+}
+.sure{
+  color: red;
+}
+.publishComent .center textarea{
+  width: 100%;
+  height: 150rpx;
+  position: relative;
+}
+.publishComent .bottom{
+   display: flex;
+   padding-bottom: 30rpx;
+   justify-content: flex-end;
+   padding-right: 40rpx;
+}
+.publishComent .bottom image{
+  width: 40rpx;
+  height: 40rpx;
+  
+}
+/* 回帖区 */
+.commentForum{
+  margin-top:50rpx;
+  border-top: 7px solid #F7F7F7;
+}
+.commentHead{
+  height: 70rpx;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #F7F7F7;
+} 
+.txt{
+font-size: 13px;
+width: 80rpx;
+display: flex;
+justify-content: flex-end;
+border-left: 5px solid #1C6FAD;
+}
+.noComment{
+height: 400rpx;
+display: flex;
+justify-content: center;
+align-items: center;
+font-size: 12px;
+color: #ccc;
+
+}
+.perfect{
+  font-size: 13px;
+  background-color: #ddd;
+  color: #808080;
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.space{
+  height: 110rpx;
+}
+/* 评论列表 */
+.commentList{
+  border-top: 1px solid #F7F7F7;
+}
+.commentContent{
+  margin:25rpx 0;
+  color: #363636;
+  font-size: 14px;
+}
+.commnetUser, .commentContent{
+  padding: 0 30rpx;
+}
+.commentList .right image{
+  width: 40rpx;
+  height: 40rpx;
+  padding-right: 7rpx;
+}
+.commentList .right{
+  font-size: 12px;
+  display: flex;
+  color:#363636
+}
+.commentList .user{
+  display: flex;
+  justify-content: space-between
 }
