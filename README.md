@@ -15,7 +15,7 @@
 
 - 授权登录页面
 
-  ![](./爱骑行效果图/登录.png)
+  ![](https://github.com/lzilwm1997/Ibike-/tree/master/爱骑行效果图.png)
 
 - 新闻资讯页面
 
