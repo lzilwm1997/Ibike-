@@ -12,7 +12,7 @@
       <icon type="clear" size="30" color="red" catchtap="removeImg" data-index="{{index}}"></icon>
     </view>
   </block>
-  <!-- 判断图片 大于等于3张的时候 取消 更多 -->
+  <!-- 判断图片 小于3张的时候 显示 更多 -->
   <block wx:if="{{tempImg.length < 3}}">
     <view class="chooseImgBoxMore" catch:tap="choosePhoto">
       <i class="iconfont iconjia"></i>

@@ -26,7 +26,7 @@
     <view class="navItem" bindtap="{{item.events}}" wx:for="{{navList}}"  wx:key="index" data-index="{{ index }}" >
       <image class="navIcon" src="{{item.icon}}" mode="widthFix" lazy-load="true"></image>
       <text class="navText">{{item.text}}</text>
-    </view>
+    </view> 
   </block>
 </view>
 

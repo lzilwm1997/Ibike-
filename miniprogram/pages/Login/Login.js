@@ -12,7 +12,7 @@ Page({
       success: res => {
         // console.log(res.result.wxInfo.OPENID)
         getApp().globalData.openid = res.result.wxInfo.OPENID
-        // console.log(res)
+        console.log(res)
         // console.log(getApp().globalData.openid)
         that.queryUsreInfo()
       }
@@ -26,6 +26,7 @@ Page({
     // 查看是否授权
     wx.getSetting({
       success: function(res) {
+        console.log(res)
         if (res.authSetting['scope.userInfo']) {
           //用户已经授权过
           wx.getUserInfo({

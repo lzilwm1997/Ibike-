@@ -134,7 +134,7 @@ Page({
 /**
  * 触摸长按事件
  */
-//帖子
+// 帖子删除举报
 forumPress(e){
   const that = this
   let postid = e.currentTarget.id
@@ -170,7 +170,7 @@ forumPress(e){
     })
   }
 },
-//评论
+// 评论删除举报
 commentPress(e) {
   const that = this
   let commentid = e.currentTarget.id
