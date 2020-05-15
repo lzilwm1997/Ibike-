@@ -15,40 +15,40 @@
 
 - 授权登录页面
 
-  ![](https://github.com/lzilwm1997/Ibike-/tree/master/爱骑行效果图/登录.png)
+  ![](https://github.com/lzilwm1997/Ibike-/raw/master/爱骑行效果图/登录.png)
 
 - 新闻资讯页面
 
-![](./爱骑行效果图/资讯首页.png)
+![](https://github.com/lzilwm1997/Ibike-/raw/master/爱骑行效果图/资讯首页.png)
 
 - 资讯详情页面
 
-![](.\爱骑行效果图\资讯详情.png)
+![](https://github.com/lzilwm1997/Ibike-/raw/master/爱骑行效果图/资讯详情.png)
 
 - 分类资讯列表页
 
-![](.\爱骑行效果图\分类列表.png)
+![](https://github.com/lzilwm1997/Ibike-/raw/master/爱骑行效果图/分类列表.png)
 
 - 论坛社区首页
 
-![](.\爱骑行效果图\论坛社区首页.png)
+![](https://github.com/lzilwm1997/Ibike-/raw/master/爱骑行效果图/论坛社区首页.png)
 
 - 论坛社区列表页
 
-![](.\爱骑行效果图\论坛详情页.png)
+![](https://github.com/lzilwm1997/Ibike-/raw/master/爱骑行效果图/论坛详情页.png)
 
 - 贴子详情页
 
-![](.\爱骑行效果图\贴子详情.png)
+![](https://github.com/lzilwm1997/Ibike-/raw/master/爱骑行效果图/贴子详情.png)
 
 - 贴子发布页
 
-![](.\爱骑行效果图\发布贴子.png)
+![](https://github.com/lzilwm1997/Ibike-/raw/master/爱骑行效果图/发布贴子.png)
 
 - 个人中心页
 
-![](.\爱骑行效果图\个人中心.png)
+![](https://github.com/lzilwm1997/Ibike-/raw/master/爱骑行效果图/个人中心.png)
 
 - 富文本编辑器
 
-![](.\爱骑行效果图\富文本编辑器.png)
+![](https://github.com/lzilwm1997/Ibike-/raw/master/爱骑行效果图/富文本编辑器.png)
